@@ -1,0 +1,25 @@
+p {
+    font-size: $font-size-5;
+    font-family: $font-lora;
+    font-weight: 400;
+    line-height: $line-height-base;
+    margin: 0;
+    margin-bottom: $grid-base;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: $font-size-4;
+    line-height: $line-height-base;
+    color: $primary-site-dark-color;
+    margin: 0;
+}
+
+a {
+    color: $primary-site-dark-color;
+    text-decoration: none;
+    -webkit-transition: 0.5s ease;
+    &:hover {
+        color: $primary-site-dark-color;
+        text-decoration: underline;
+    }    
+}

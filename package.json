@@ -1,0 +1,55 @@
+{
+  "name": "learning-git-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm-run-all test:html",
+    "test:html": "glob-run nu-html-checker *.html",
+    "init-project": "glob-run npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build": "npm-run-all build:* test",
+    "build:clean": "rimraf css/*",
+    "build:sass": "node-sass --output-style compact -o prod-assets dev-assets",
+    "build:autoprefixer": "autoprefixer-cli -o prod-assets/style.prefixed.css prod-assets/style.css",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o prod-assets dev-assets",
+    "watch": "npm-run-all -p build watch:*",
+    "watch:sassprefixer": "onchange dev-assets/**/*.scss -- npm-run-all build:sass build:autoprefixer",
+    "watch:browsersync": "browser-sync start --server --files prod-assets/*.css *.html --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexxtGen/learning-git-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nexxtGen/learning-git-2/issues"
+  },
+  "homepage": "https://github.com/nexxtGen/learning-git-2#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.0.2",
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.24.6",
+    "globstar": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "http-server": "^0.11.1",
+    "mkdirp": "^0.5.1",
+    "mustache": "^2.3.2",
+    "node-sass": "^4.9.3",
+    "npm-run-all": "^4.1.3",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^4.1.0",
+    "postcss-cli": "^6.0.0",
+    "rimraf": "^2.6.2",
+    "sass": "^1.11.0"
+  },
+  "dependencies": {
+    "glob-run": "^0.1.6",
+    "postcss-cli-simple": "^1.0.4"
+  }
+}

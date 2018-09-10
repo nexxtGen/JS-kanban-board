@@ -1,0 +1,56 @@
+.u-flex-c {
+    display: flex;
+    justify-content: center;
+}
+
+
+.u-object-fit-cover { 
+    object-fit: cover; 
+}
+
+.col-offset-4 {margin-left: 33.33%;}
+
+// Margin Bottom
+.u-mb-1 {
+    margin-bottom: $grid-base;
+}
+
+.u-mb-2 {
+    margin-bottom: $grid-base * 2;
+}
+
+.u-mb-3 {
+    margin-bottom: $grid-base * 3;
+}
+.u-mb-4 {
+    margin-bottom: $grid-base * 4;
+}
+.u-mb-5 {
+    margin-bottom: $grid-base * 5;
+}
+.u-mb-6 {
+    margin-bottom: $grid-base * 6;
+}
+
+// Margin Top
+
+.u-mt-1 {
+    margin-top: $grid-base;
+}
+
+.u-mt-2 {
+    margin-top: $grid-base * 2;
+}
+
+.u-mt-3 {
+    margin-top: $grid-base * 3;
+}
+.u-mt-4 {
+    margin-top: $grid-base * 4;
+}
+.u-mt-5 {
+    margin-top: $grid-base * 5;
+}
+.u-mt-6 {
+    margin-top: $grid-base * 6;
+}

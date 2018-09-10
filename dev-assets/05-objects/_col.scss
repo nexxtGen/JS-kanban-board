@@ -1,0 +1,155 @@
+.o-col {
+    width: 100%;
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    // Medium size col media queries (12 col)
+    &--md1 {
+        @include medium-up {
+            flex: 0 0 8.33%;
+            max-width: 8.33%; //support for IE explorer
+        }
+    }
+
+    &--md2 {
+        @include medium-up {
+            flex: 0 0 16.66%;
+            max-width: 16.66%; //support for IE explorer
+        }
+    }
+    &--md3 {
+        @include medium-up {
+            flex: 0 0 25%;
+            max-width: 25%; //support for IE explorer
+        }
+    }
+    &--md4 {
+        @include medium-up {
+            flex: 0 0 33.33%;
+            max-width: 33.33%; //support for IE explorer
+        }
+    }
+    &--md5 {
+        @include medium-up {
+            flex: 0 0 41.66%;
+            max-width: 41.66%; //support for IE explorer
+        }
+    }
+    &--md6 {
+        @include medium-up {
+            flex: 0 0 50%;
+            max-width: 50%; //support for IE explorer
+        }
+    }
+    &--md7 {
+        @include medium-up {
+            flex: 0 0 58.33%;
+            max-width: 58.33%; //support for IE explorer
+        }
+    }
+    &--md8 {
+        @include medium-up {
+            flex: 0 0 66.66%;
+            max-width: 66.66%; //support for IE explorer
+        }
+    }
+    &--md9 {
+        @include medium-up {
+            flex: 0 0 75%;
+            max-width: 75%; //support for IE explorer
+        }
+    }
+    &--md10 {
+        @include medium-up {
+            flex: 0 0 83.33%;
+            max-width: 83.33%; //support for IE explorer
+        }
+    }
+    &--md11 {
+        @include medium-up {
+            flex: 0 0 91.66%;
+            max-width: 91.66%; //support for IE explorer
+        }
+    }
+    &--md12 {
+        @include medium-up {
+            flex: 0 0 100%;
+            max-width: 100%; //support for IE explorer
+        }
+    }
+    //------------------------------------------------------------------------
+    // Large size col media queries (12 col)
+    &--lg1 {
+        @include large-up {
+            flex: 0 0 8.33%;
+            max-width: 8.33%; //support for IE explorer
+        }
+    }
+
+    &--lg2 {
+        @include large-up {
+            flex: 0 0 16.66%;
+            max-width: 16.66%; //support for IE explorer
+        }
+    }
+    &--lg3 {
+        @include large-up {
+            flex: 0 0 25%;
+            max-width: 25%; //support for IE explorer
+        }
+    }
+    &--lg4 {
+        @include large-up {
+            flex: 0 0 33.33%;
+            max-width: 33.33%; //support for IE explorer
+        }
+    }
+    &--lg5 {
+        @include large-up {
+            flex: 0 0 41.66%;
+            max-width: 41.66%; //support for IE explorer
+        }
+    }
+    &--lg6 {
+        @include large-up {
+            flex: 0 0 50%;
+            max-width: 50%; //support for IE explorer
+        }
+    }
+    &--lg7 {
+        @include large-up {
+            flex: 0 0 58.33%;
+            max-width: 58.33%; //support for IE explorer
+        }
+    }
+    &--lg8 {
+        @include large-up {
+            flex: 0 0 66.66%;
+            max-width: 66.66%; //support for IE explorer
+        }
+    }
+    &--lg9 {
+        @include large-up {
+            flex: 0 0 75%;
+            max-width: 75%; //support for IE explorer
+        }
+    }
+    &--lg10 {
+        @include large-up {
+            flex: 0 0 83.33%;
+            max-width: 83.33%; //support for IE explorer
+        }
+    }
+    &--lg11 {
+        @include large-up {
+            flex: 0 0 91.66%;
+            max-width: 91.66%; //support for IE explorer
+        }
+    }
+    &--lg12 {
+        @include large-up {
+            flex: 0 0 100%;
+            max-width: 100%; //support for IE explorer
+        }
+    }
+}

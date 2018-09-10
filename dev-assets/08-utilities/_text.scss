@@ -1,0 +1,36 @@
+.u-text-lora {
+    font-family: $font-lora;
+}
+.u-text-italic {
+    font-style: italic;  
+}
+.u-text-center {
+    text-align: center;
+}
+
+.u-text-right {
+    text-align: right;
+}
+
+.u-text-left {
+    text-align: left;
+}
+
+.u-text-lg-right {
+    @include large-up {
+        text-align: right;
+    }
+}
+
+.u-text-lg-left {
+    @include large-up {
+        text-align: left;
+    }
+}
+
+.u-text-lg-left {
+    @include large-up {
+        text-align: left;
+    }
+}
+

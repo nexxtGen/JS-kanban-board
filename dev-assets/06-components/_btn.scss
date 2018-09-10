@@ -1,0 +1,27 @@
+// Buttons
+.c-btn {
+    border: none;
+    border-radius: $border-radius;
+    display: inline-block;
+    font-size-adjust: $font-size-5;
+    font-weight: 700;
+    line-height: $line-height-base;
+    padding: 1rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: $grid-base * 22;
+    transition: all .25s ease-in-out;
+    
+    &:hover {
+        text-decoration: none;
+    }   
+    
+    &--primary {
+        background-color: $primary-site-color;
+        color: $white;
+        &:hover {
+            background-color: darken($primary-site-color, 20%);
+            color: $white;
+        }
+    }
+}
