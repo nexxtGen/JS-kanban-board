@@ -13,8 +13,11 @@
 <body>
     
     <div id="board" class="board t-header">
-        <h1>Kanban board</h1>
-        <button class="create-column">Add a column</button>        
+        <div class="t-header__hero">
+            <h1 class="t-header__hero-h1">Kanban board</h1>
+            <button class="create-column">Add a column</button>    
+        </div>
+            
         <div class="column-container"></div>                                  
     </div>                
    
@@ -24,11 +27,10 @@
             <div class="column t-header__col-template">
                 <div class="t-header__container">
                     <div class="t-form">
-                        <h2 class="column-title">{{ name }}</h2>
-                        <button class="add-card">Add a card</button>
-                        <ul id={{ id }} class="column-card-list"></ul>
-                        <button class="btn-delete">X</button>
-                        
+                        <button class="btn-delete t-header__btn-head">remove column</button>     
+                        <h2 class="column-title">{{ name }}</h2>                        
+                        <button class="add-card">Add a card</button>                                               
+                        <ul id={{ id }} class="column-card-list"></ul>                             
                     </div>
                 </div>
             </div>

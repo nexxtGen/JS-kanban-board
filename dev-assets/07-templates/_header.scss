@@ -8,45 +8,65 @@
 }
 .t-header {
   height: 100vh;
-  background: url('../images/bc-a2.jpg') fixed  no-repeat;
+  background: url('../images/bc-a2.jpg')   no-repeat;
   background-position: center;
   background-size: cover;
-  box-shadow: 2px 2px 14px rgb(46, 46, 46); 
+  //box-shadow: 2px 2px 14px rgb(46, 46, 46);  
 
-  &__col-template {
-    margin: 50px 15px;    
-  }
-
-  &__container {
-    margin: 20px;
-    width: 350px;
-    height: 500px;
-    background: url('../images/bc-a2.jpg') fixed  no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;    
-    margin: 15px auto;   
-    border-radius: 1px;
-    border: 0.5px solid rgba(59, 96, 121, 0.5);
-    //box-shadow: 0px 0px 4px rgb(37, 37, 37);
-    &::before {      
-      width: 400px;
-      height: 550px;
-      content: "";
-      position: absolute;
-      top: -25px;
-      left: -25px;
-      bottom: 0;
-      right: 0;
-      background: inherit;
-      box-shadow: inset 0 0 0 300px rgba(14, 16, 19, 0.5);
-      filter: blur(4px);
+    &__btn-head {
+      width: 100%;  
     }
-  }
+
+    &__hero {
+      margin-bottom: 120px;
+      display: flex;
+      justify-content: center;
+      padding: 40px;    
+      background-color: rgba($color: #000000, $alpha: 0.6)    
+    }
+
+    &__hero-h1 {
+      padding-right: 15px;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+
+    &__col-template {
+      margin: 40px 15px 20px 15px;    
+    }
+
+    &__container {
+      margin: 20px;
+      width: 350px;
+      min-height: 500px;
+      background: url('../images/bc-a2.jpg') fixed  no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;    
+      margin: 15px auto;   
+      border-radius: 1px;
+      border: 1px solid rgb(0, 0, 0);
+      //box-shadow: 0px 0px 4px rgb(37, 37, 37);
+      &::before {      
+        width: 400px;
+        min-height: 550px;
+        content: "";
+        position: absolute;
+        top: -25px;
+        //left: -25px;
+        bottom: 0;
+        right: 0;
+        background: inherit;
+        //box-shadow: inset 0 0 0 300px rgba(14, 16, 19, 0.5);
+        box-shadow: inset 0 0 0 300px rgba(33, 42, 53, 0.4);
+        filter: blur(8px);
+      }
+    }
 }
 .t-form {
-  padding: 15px;  
+  width: 100%;
+  //padding: 15px;  
   position: relative; 
   display: inline-block;
   text-align: center;  
@@ -56,9 +76,67 @@
   }  
 }
   
-.card {
+.card {  
   display: flex;
   flex-grow: 1;
-  padding: 15px;
-  background: rgba($color: #000000, $alpha: 0.5)
+  //padding: 15px;  
+  background: rgba($color: #000000, $alpha: 0.5);  
+  text-align: center;  
+  margin-top: 10px;
+  transition: $thetransition;
+  &:hover {
+    background: rgba($color: #000000, $alpha: 0.7); 
+    transition: $thetransition;
+    cursor: grab;    
+  }
 }  
+
+.card-description {
+  font-family: $font-montserrat;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  width: 100%;
+  
+}
+
+.column-title {
+  text-transform: uppercase;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  background: rgba($color: #000000, $alpha: 0.5);
+}
+
+.btn-delete {  
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  //align-self: flex-start;
+  border: none;
+  cursor: pointer;
+  background: rgba($color: #1566b1, $alpha: 0.5);
+  transition: $thetransition;
+  
+  &:hover {
+    background: rgba($color: #ff0303, $alpha: 0.6);
+    transition: $thetransition;
+  }  
+}
+
+.add-card {
+  color: white;
+  background: rgba($color: #000000, $alpha: 0.5);  
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 10px;
+  transition: $thetransition;
+  &:hover {
+    background: rgba($color: #000000, $alpha: 0.7);
+    transition: $thetransition;
+  }  
+  
+}

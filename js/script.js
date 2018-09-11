@@ -113,22 +113,24 @@
             board.addColumn(column);
         });
 
-        // Add sort columns
-        /*
+        // Add function: sortable columns
+        
         Sortable.create(board.element, {
 			group: 'kanban-columns',
 			sort: true
         });
-        */
+        
     
         // Create All Kanban objects
     
         // CREATING COLUMNS
+        var ideaColumn = new Column('Ideas');
         var todoColumn = new Column('To do');
         var doingColumn = new Column('Doing');
         var doneColumn = new Column('Done');
         
         // ADDING COLUMNS TO THE BOARD
+        board.addColumn(ideaColumn);
         board.addColumn(todoColumn);
         board.addColumn(doingColumn);
         board.addColumn(doneColumn);
@@ -136,8 +138,12 @@
         // CREATING CARDS
         var card1 = new Card('New task');
         var card2 = new Card('Create kanban boards');
+        var card3 = new Card('Your Ideas');
+        var card4 = new Card('Can you drop me and drag!');
         
         // ADDING CARDS TO COLUMNS
+        ideaColumn.addCard(card3);
+        ideaColumn.addCard(card4);
         todoColumn.addCard(card1);
         doingColumn.addCard(card2);
         
