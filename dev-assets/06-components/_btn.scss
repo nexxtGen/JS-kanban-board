@@ -1,19 +1,25 @@
 // Buttons
 .c-btn {
-    border: none;
-    border-radius: $border-radius;
+    border: 1px solid black;
+    color: white;
+    background: rgba($color: #000000, $alpha: 0.5);  
+    //border-radius: $border-radius;
     display: inline-block;
-    font-size-adjust: $font-size-5;
+    font-size-adjust: $font-size-4;
     font-weight: 700;
     line-height: $line-height-base;
-    padding: 1rem 0;
+    padding: 0.9rem 0;
     text-align: center;
     text-transform: uppercase;
-    width: $grid-base * 22;
-    transition: all .25s ease-in-out;
+    width: $grid-base * 18;
+    transition: all .25s ease-in-out;    
+    transform: skew(20deg);
     
     &:hover {
         text-decoration: none;
+        cursor: pointer;
+        background: rgba($color: #000000, $alpha: 0.7);
+        transition: $thetransition;
     }   
     
     &--primary {

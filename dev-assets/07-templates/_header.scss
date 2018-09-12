@@ -18,21 +18,77 @@
     }
 
     &__hero {
+      width: 100%;
+      height: 200px;
       margin-bottom: 120px;
       display: flex;
+      justify-content: center;      
+      @include medium-up {
+        height: 150px;
+        padding: 0px; 
+      }   
+      //background-color: rgba($color: #000000, $alpha: 0.6);
+
+      background: url('../images/bc-a2.jpg') fixed  no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;  
+      //margin: 15px auto;   
+      border-radius: 1px;
+      border-bottom: 1px solid rgb(0, 0, 0);  
+
+      &::before {
+        width: 100%;   
+        height: 250px;
+
+        @include medium-up {
+          height: 200px;          
+        }
+        
+        content: "";
+        position: absolute;
+        top: -25px;        
+        bottom: 0;
+        right: 0;
+        background: inherit;        
+        box-shadow: inset 0 0 0 300px rgba(21, 90, 49, 0.4);        
+        filter: blur(8px);
+      }
+    }
+
+    &__hero-content {
+      height: 200px;      
+      padding: 20px 300px;
+      transform: skew(-20deg);
+      background: rgba($color: #145b8a, $alpha: 0.5);
+      display: flex;
       justify-content: center;
-      padding: 40px;    
-      background-color: rgba($color: #000000, $alpha: 0.6)    
+      align-items: center;
+      flex-direction: column;
+      @include medium-up {
+        flex-direction: row;
+        height: 150px;
+      }
+      z-index: 3;
     }
 
     &__hero-h1 {
-      padding-right: 15px;
-      font-size: 28px;
+      color: white;
+      padding-right: $gutter * 2;
+      font-size: 40px;
       text-transform: uppercase;
     }
 
     &__col-template {
-      margin: 40px 15px 20px 15px;    
+      margin: 40px 15px 20px 15px;  
+      transition: $thetransition2; 
+      &:hover {
+        transform: scale(1.035);
+        cursor: move;
+        box-shadow: 1px 3px 12px rgb(47, 47, 47);
+        transition: $thetransition2; 
+      } 
     }
 
     &__container {

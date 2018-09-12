@@ -10,18 +10,17 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">   
 </head>
-<body>
-    
+<body>    
     <div id="board" class="board t-header">
         <div class="t-header__hero">
-            <h1 class="t-header__hero-h1">Kanban board</h1>
-            <button class="create-column">Add a column</button>    
+            <div class="t-header__hero-content">
+                <h1 class="t-header__hero-h1">Kanban board</h1>
+                <button class="create-column c-btn">Add a column</button>             
+            </div>  
         </div>
             
         <div class="column-container"></div>                                  
-    </div>                
-   
-        
+    </div>         
 
         <script id="column-template" type="x-tmpl-mustache">
             <div class="column t-header__col-template">
@@ -38,14 +37,10 @@
 
         <script id="card-template" type="x-tmpl-mustache">
             <div class="card">
-            <p class="card-description">{{ description }}</p>
-            <button class="btn-delete">x</button>
+                <p class="card-description">{{ description }}</p>
+                <button class="btn-delete">x</button>
             </div
         </script>
-    
-   
-
-
     
       <script type="text/javascript" src="vendor/mustache.js"></script>       
       <script type="text/javascript" src="vendor/Sortable.min.js"></script> 
