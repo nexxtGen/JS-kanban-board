@@ -45,12 +45,10 @@
                   self.removeColumn();
                 }
                 // Change this
-                if (event.target.classList.contains('add-card')) {
-
-                    //-------------------------
-                    var cardName = prompt("Enter the name of the card");
-                    validatePropmt(cardName, self); 
+                if (event.target.classList.contains('add-card')) {                    
+                    validatePropmtAndAddObj("Enter the name of the card", self); 
                     /*
+                    var cardName = prompt("Enter the name of the card");
                     if (cardName != null && cardName != isNaN && cardName != '') {
                         self.addCard(new Card(cardName));                     
                     } 
@@ -59,24 +57,24 @@
             });
         }
          // Add listener to button. This create new column object in board.
-         document.querySelector('#board .create-column').addEventListener('click', function() {
-             //--------------------
+         document.querySelector('#board .create-column').addEventListener('click', function() {             
+             validatePropmtAndAddObj('Enter a column name', name);     
+             /*            
             var name = prompt('Enter a column name'); 
-            validatePropmt(name);     
-            /*            
             if (name != null && name != isNaN && name != '') {
                 var column = new Column(name); 
                 board.addColumn(column);                        
             } 
             */
         });
-        //---------------------------------
-        function validatePropmt (nameVal, self) {           
-            if (nameVal != null && nameVal != isNaN && nameVal != '') {                            
+        //-------This function run prompt, validate input and create new object (Column or Card).
+        function validatePropmtAndAddObj (message, self) {   
+            var name = prompt(message);  
+            if (name != null && name != isNaN && name != '') {                            
                 if (event.target.classList.contains('add-card')) {                    
-                    self.addCard(new Card(nameVal));   
+                    self.addCard(new Card(name));   
                 } else {
-                    var column = new Column(nameVal); 
+                    var column = new Column(name); 
                     board.addColumn(column);   
                 }
             }
