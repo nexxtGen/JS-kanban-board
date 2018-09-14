@@ -28,7 +28,8 @@
     
             return element;
         }
-    
+        
+        
         //Class name write with large letter!
         // Column class
         function Column(name) {
@@ -43,16 +44,44 @@
                 if (event.target.classList.contains('btn-delete')) {
                   self.removeColumn();
                 }
-              
+                // Change this
                 if (event.target.classList.contains('add-card')) {
+
+                    //-------------------------
                     var cardName = prompt("Enter the name of the card");
+                    validatePropmt(cardName, self); 
+                    /*
                     if (cardName != null && cardName != isNaN && cardName != '') {
                         self.addCard(new Card(cardName));                     
-                    }                   
+                    } 
+                    */                  
                 }
             });
         }
-    
+         // Add listener to button. This create new column object in board.
+         document.querySelector('#board .create-column').addEventListener('click', function() {
+             //--------------------
+            var name = prompt('Enter a column name'); 
+            validatePropmt(name);     
+            /*            
+            if (name != null && name != isNaN && name != '') {
+                var column = new Column(name); 
+                board.addColumn(column);                        
+            } 
+            */
+        });
+        //---------------------------------
+        function validatePropmt (nameVal, self) {           
+            if (nameVal != null && nameVal != isNaN && nameVal != '') {                            
+                if (event.target.classList.contains('add-card')) {                    
+                    self.addCard(new Card(nameVal));   
+                } else {
+                    var column = new Column(nameVal); 
+                    board.addColumn(column);   
+                }
+            }
+        }
+        
         // Methods for Column Class
         Column.prototype = {
             addCard: function(card) {
@@ -109,14 +138,7 @@
             });
         }
         
-          // Add listener to button. This create new column object in board.
-        document.querySelector('#board .create-column').addEventListener('click', function() {
-            var name = prompt('Enter a column name');      
-            if (name != null && name != isNaN && name != '') {
-                var column = new Column(name); 
-                board.addColumn(column);                        
-            } 
-        });
+         
 
         // Add function: sortable columns
         
