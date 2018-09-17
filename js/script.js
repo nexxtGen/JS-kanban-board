@@ -10,15 +10,8 @@
                 str += chars[Math.floor(Math.random() * chars.length)];
             }
             return str;
-        }
-    
-        //Function for generate mustache template from html code and add this to box (<div> etc).
-        //--- name- template id in html code
-        //--- data - dane podstawione do szablonu
-        //--- basicElement - Element w który zostanie opakowany szablon. Potrzebny do wytworzenia drzewa DOM by mieć dostęp
-        //do DOM Api ponieważ Mustache.js zwraca w funkcji render string'a z zawartością szablonu!
-        
-    
+        } 
+        //gen Template
         function generateTemplate(name, data, basicElement) {
             var template = document.getElementById(name).innerHTML;
             var element = document.createElement(basicElement || 'div'); // Create random div
@@ -28,9 +21,7 @@
     
             return element;
         }
-        
-        
-        //Class name write with large letter!
+
         // Column class
         function Column(name) {
             var self = this;
@@ -43,31 +34,34 @@
             this.element.querySelector('.column').addEventListener('click', function (event) {
                 if (event.target.classList.contains('btn-delete')) {
                   self.removeColumn();
-                }
-                // Change this
+                }                
                 if (event.target.classList.contains('add-card')) {                    
-                    validatePropmtAndAddObj("Enter the name of the card", self); 
-                    /*
-                    var cardName = prompt("Enter the name of the card");
-                    if (cardName != null && cardName != isNaN && cardName != '') {
-                        self.addCard(new Card(cardName));                     
-                    } 
-                    */                  
+                    validatePropmtAndAddObj(self, "Enter the name of the card", addCardCall);                                    
                 }
             });
-        }
-         // Add listener to button. This create new column object in board.
-         document.querySelector('#board .create-column').addEventListener('click', function() {             
-             validatePropmtAndAddObj('Enter a column name', name);     
-             /*            
-            var name = prompt('Enter a column name'); 
-            if (name != null && name != isNaN && name != '') {
-                var column = new Column(name); 
-                board.addColumn(column);                        
-            } 
-            */
+        }  
+
+        document.querySelector('#board .create-column').addEventListener('click', function() {             
+             validatePropmtAndAddObj(null, 'Enter a column name', addColumnCall );           
         });
+
+        function validatePropmtAndAddObj (self, message, callback) {                                  
+            var name = prompt(message);  
+            if (name != null && name != isNaN && name != '') {                            
+                callback(name, self);
+            }
+        }
+        
+        function addCardCall(name, self) {            
+            self.addCard(new Card(name));  
+        }
+
+        function addColumnCall(name) {            
+            var column = new Column(name); 
+            board.addColumn(column);  
+        }
         //-------This function run prompt, validate input and create new object (Column or Card).
+        /*
         function validatePropmtAndAddObj (message, self) {   
             var name = prompt(message);  
             if (name != null && name != isNaN && name != '') {                            
@@ -79,6 +73,7 @@
                 }
             }
         }
+        */
         
         // Methods for Column Class
         Column.prototype = {
@@ -106,8 +101,7 @@
                   self.removeCard();
                 }
               });
-          }
-    
+          }    
           // delete card method
           Card.prototype = {
             removeCard: function() {
@@ -115,8 +109,7 @@
             }
         }
     
-        // Create board Object
-    
+        // Create board Object    
         var board = {
             name: 'Kanban Board',
             element: document.querySelector('#board .column-container'),
@@ -135,20 +128,16 @@
                 sort: true
             });
         }
-        
-         
 
-        // Add function: sortable columns
-        
+        // Add function: sortable columns        
         Sortable.create(board.element, {
 			group: 'kanban-columns',
 			sort: true
-        });
+        });        
+    
+        // Create All Kanban objects    
+        // CREATE COLUMNS
         
-    
-        // Create All Kanban objects
-    
-        // CREATING COLUMNS
         var ideaColumn = new Column('Ideas');
         var todoColumn = new Column('To do');
         var doingColumn = new Column('Doing');
@@ -171,6 +160,8 @@
         ideaColumn.addCard(card4);
         todoColumn.addCard(card1);
         doingColumn.addCard(card2);
+
+        
         
     });
     
